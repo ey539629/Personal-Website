@@ -1,0 +1,135 @@
+/*Project CSS*/
+.project-image{
+    height: 15vh;
+    width: 10vw;
+}
+
+  /* This is for the side navigational bar */ /* */
+#project-menu{
+    height: 100vh; /* We want it to cover the entire screen*/
+    width: 0; /* We start it at 0 because it should not appear yet, changes with JS*/
+    position: fixed; /* It will stay in place*/
+    z-index: 2; /* Stays in front of the page */
+    top: 0; /* Stays at the top */
+    right: 0; /* This nav bar will be coming from the right */
+    overflow: hidden; /* Disables the horizontal scrolling*/
+    transition: 750ms ease;/*Shows the sliding effect*/
+    display: flex;
+    /* display: flex; */
+}
+
+.project-item{ /* This just changes the paragraph tags and how they are displayed in the side bar*/
+    color: white;
+    display: flex;
+    text-decoration: none;
+    padding: 0rem;
+    width: 25vw;
+    height: 15vh;
+    margin: 3rem;
+    transition: opacity 400ms ease;
+    vertical-align: middle;
+}
+#project-item-home{
+    margin: 3rem;
+    height: 10vh;
+}
+
+
+#project-items{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-left: 16vw;
+    z-index: 2;
+}
+
+#project-scroll{
+    overflow-y: scroll; /* Disables the horizontal scrolling*/
+    overflow-x: hidden;
+    padding-right: 84vw;
+    transition: 750ms ease;
+}
+
+#project-items:hover > .project-item{
+    opacity: 0.2;
+}
+
+#project-items:hover > .project-item:hover{
+    opacity: 1;
+}
+
+
+#project-background-pattern{
+    height: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.1) 9%,
+        transparent 9%
+    );
+    /* background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1) 9%,
+        transparent 9%
+    ); */
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+    transition: opacity 800ms ease,
+        background-size 800ms ease,
+        background-position 800ms ease;
+}
+
+#project-scroll:hover ~ #project-background-pattern{
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
+}
+
+#project-menu[data-active-index = "0"] > #project-background-pattern{
+    background-position: 0% 0%;
+}
+#project-menu[data-active-index = "1"] > #project-background-pattern{
+    background-position: 0% -50%;
+}
+#project-menu[data-active-index = "2"] > #project-background-pattern{
+    background-position: 0% -100%;
+}
+#project-menu[data-active-index = "3"] > #project-background-pattern{
+    background-position: 0% -150%;
+}
+#project-menu[data-active-index = "4"] > #project-background-pattern{
+    background-position: 0% -200%;
+}
+#project-menu[data-active-index = "5"] > #project-background-pattern{
+    background-position: 0% -250%;
+}
+
+
+
+#project-items:hover ~ #menu-background-image{
+    background-size: 150vmax;
+    opacity: 0.25;
+}
+
+#project-menu[data-active-index = "0"] ~ #menu-background-image{
+    background-position: right 0%;
+}
+#project-menu[data-active-index = "1"] ~ #menu-background-image{
+    background-position: right 10%;
+}
+#project-menu[data-active-index = "2"] ~ #menu-background-image{
+    background-position: right 20%;
+}
+#project-menu[data-active-index = "3"] ~ #menu-background-image{
+    background-position: right 30%;
+}
+#project-menu[data-active-index = "4"] ~ #menu-background-image{
+    background-position: right 40%;
+}
+#project-menu[data-active-index = "5"] ~ #menu-background-image{
+    background-position: right 50%;
+}
